@@ -262,7 +262,7 @@
      8. Contact Form — Envoi vers WhatsApp
      ============================================ */
 
-  const WHATSAPP_NUMBER = '212675606633';
+  const WHATSAPP_NUMBER = '212600000000';
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
