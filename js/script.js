@@ -59,7 +59,45 @@
   });
 
   /* ============================================
-     2. Navigation — Scroll Effects
+     2. Working Hours — Badge Status
+     ============================================ */
+
+  function updateOfficeStatus() {
+    const badge = $('#hero-badge-text');
+    const dot = $('.hero-badge-dot');
+    if (!badge || !dot) return;
+
+    const now = new Date();
+    const day = now.getDay();       // 0=Sun, 1=Mon, ..., 6=Sat
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const time = hour * 60 + minute;
+
+    const weekdays = [
+      { open: 9 * 60, close: 18 * 60 },   // Mon
+      { open: 9 * 60, close: 18 * 60 },   // Tue
+      { open: 9 * 60, close: 18 * 60 },   // Wed
+      { open: 9 * 60, close: 18 * 60 },   // Thu
+      { open: 9 * 60, close: 18 * 60 },   // Fri
+      { open: 9 * 60, close: 13 * 60 },   // Sat
+      null                                  // Sun (closed)
+    ];
+
+    const schedule = weekdays[day];
+
+    if (schedule && time >= schedule.open && time < schedule.close) {
+      badge.textContent = 'Cabinet ouvert — Prenez rendez-vous';
+      dot.style.background = '';
+    } else {
+      badge.textContent = 'Cabinet fermé';
+      dot.style.background = 'var(--clr-text-muted)';
+    }
+  }
+
+  updateOfficeStatus();
+
+  /* ============================================
+     3. Navigation — Scroll Effects
      ============================================ */
 
   let lastScroll = 0;
