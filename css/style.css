@@ -569,13 +569,26 @@ input, textarea, select {
   align-items: center;
   gap: var(--sp-sm);
   padding: 8px 20px;
-  background: hsla(0, 0%, 100%, .15);
-  backdrop-filter: blur(8px);
+  background: hsla(0, 0%, 100%, .2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-xl);
-  border: 1px solid hsla(0, 0%, 100%, .2);
+  border: 1px solid hsla(0, 0%, 100%, .25);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
   letter-spacing: .03em;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero-badge {
+    background: hsl(0, 0%, 100%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-color: hsla(0, 0%, 0%, .08);
+    color: var(--clr-text);
+    box-shadow: 0 2px 12px hsla(0, 0%, 0%, .12);
+  }
 }
 
 .hero-badge-dot {
