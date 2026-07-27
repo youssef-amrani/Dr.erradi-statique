@@ -86,10 +86,10 @@
     const schedule = weekdays[day];
 
     if (schedule && time >= schedule.open && time < schedule.close) {
-      badge.textContent = 'Consultations en cours — Prenez rendez-vous';
+      badge.textContent = 'Ouvert — Prenez rendez-vous';
       dot.style.background = '';
     } else {
-      badge.textContent = 'Consultations terminées';
+      badge.textContent = 'Fermé';
       dot.style.background = 'var(--clr-text-muted)';
     }
   }
