@@ -612,14 +612,22 @@ input, textarea, select {
   font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
   margin-bottom: var(--sp-lg);
+  color: #ffffff;
 }
 
 .hero-title span {
   display: block;
-  background: linear-gradient(90deg, #fff, hsla(152, 48%, 75%, 1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .hero-title span {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }
 
 .hero-description {
